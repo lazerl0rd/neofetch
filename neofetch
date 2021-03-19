@@ -1823,7 +1823,7 @@ get_wm() {
                            -e westford \
                            -e weston)
 
-    elif [[ $DISPLAY && $os != "Mac OS X" && $os != "macOS" && $os != FreeMiNT ]]; then
+    elif [[ $DISPLAY && $os != "Mac OS X" && $os != "macOS" && $os != FreeMiNT && $ascii_distro != *"on Windows 10"* ]]; then
         type -p xprop &>/dev/null && {
             id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
             id=${id##* }
